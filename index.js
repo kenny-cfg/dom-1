@@ -12,12 +12,15 @@ const counterSpan = document.getElementById('counter')
  * - DRY up the code (DRY = Don't repeat yourself)
  */
 
-clickMeButton.addEventListener('click', () => {
-  count++
+const updateCount = (newCount) => {
+  count = newCount
   counterSpan.innerText = count
+}
+
+clickMeButton.addEventListener('click', () => {
+  updateCount(count + 1)
 })
 
 resetButton.addEventListener('click', () => {
-  count = 0
-  counterSpan.innerText = count
+  updateCount(0)
 })
