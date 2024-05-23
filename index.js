@@ -2,6 +2,7 @@ let count = 0
 
 const clickMeButton = document.getElementById('click_me_button')
 const resetButton = document.getElementById('reset_button')
+const multiplyBy10Button = document.getElementById('multiply_by_10')
 const counterSpan = document.getElementById('counter')
 
 
@@ -17,10 +18,10 @@ const updateCount = (newCount) => {
   counterSpan.innerText = count
 }
 
-clickMeButton.addEventListener('click', () => {
-  updateCount(count + 1)
-})
+const addClickHandler = (element, functionToCall) => {
+  element.addEventListener('click', functionToCall)
+}
 
-resetButton.addEventListener('click', () => {
-  updateCount(0)
-})
+addClickHandler(clickMeButton, () => updateCount(count + 1))
+addClickHandler(resetButton, () => updateCount(0))
+addClickHandler(multiplyBy10Button, () => updateCount(count * 10))
