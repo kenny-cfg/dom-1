@@ -4,7 +4,6 @@ const clickMeButton = document.getElementById('click_me_button')
 const resetButton = document.getElementById('reset_button')
 const counterSpan = document.getElementById('counter')
 
-console.log(resetButton)
 
 /*
  * - Add a new reset button
@@ -18,7 +17,7 @@ clickMeButton.addEventListener('click', () => {
   counterSpan.innerText = count
 })
 
-clickMeButton.addEventListener('click', () => {
-  count++
+resetButton.addEventListener('click', () => {
+  count = 0
   counterSpan.innerText = count
 })
